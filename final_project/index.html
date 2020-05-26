@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Max Grier's Website</title>
+        <meta name="viewpoint" content="width=device-width, initial-scale=1">
+        
+        <!-- verify what the next 3 lines contribute-->
+        <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Dosis|Eczar" rel="stylesheet">
+    </head>
+    <body>
+        <div class="sticky" id="myHeader">
+            <header class="header">
+                <nav class="main-nav">
+                    <ul class="main-nav__menu">
+                        <li class="main-nav__item"><a onclick="formSlide()" href="#form">Website Review</a></li>
+                        <li class="main-nav__item"><a onclick="aboutMeSlide()" href="#about">About Me</a></li>
+                        <li class="main-nav__item"><a onclick="projectsSlide()" href="#projects">Projects</a></li>
+                        <li class="main-nav__item"><a onclick="homeSlide()" href="#home">Home</a></li>
+                        <li class="main-nav__item"><a href="resume.pdf">Resume</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- Form -->
+            <div class="content hide" id="form">
+                <h2 class="home__header">Contact Me</h2>
+                <form action=" http://web.engr.oregonstate.edu/~zhangluy/tools/class-content/form_tests/check_request.php" method="get">
+                    <fieldset>
+                        <legend>Your Details:</legend>
+                        <label>Name:
+                            <input type="text" name="name" size="30" maxlength="100">
+                        </label>
+                        <br />
+                        <label>Email:
+                            <input type="email" name="email" size="30" maxlength="100">
+                        </label>
+                        <br />
+                    </fieldset>
+                    <br />
+                    <fieldset>
+                        <legend>Your Review:</legend>
+                        <p>
+                            <label for="hear-about">How did you hear about me?</label>
+                            <select name="referrer" id="hear-about">
+                                <option value="LinkedIn">LinkedIn</option>
+                                <option value="friend">Friend</option>
+                                <option value="GitHub">GitHub</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </p>
+                        <p>Would you visit again?
+                            <br />
+                            <label>
+                                <input type="radio" name="rating" value="yes" />Yes</label>
+                            <label>
+                                <input type="radio" name="rating" value="no" />No</label>
+                            <label>
+                                <input type="radio" name="rating" value="maybe" />Maybe</label>
+                        </p>
+                        <p>
+                            <label for="comments">Comments:</label>
+                            <br />
+                            <textarea rows="4" cols="40" id="comments"></textarea>
+                        </p>
+                        <label>
+                        <br />
+                        <input type="submit" value="Submit review" />
+                    </fieldset>
+                </form>
+
+
+            </div>
+            <footer class="footer2 hide" id="form_footer">
+                <ul class="footer-contact">
+                    <li><a target="__blank" href="https://github.com/maxgrier">GitHub</a></li>
+                    <li><a class="footer-contact__icon" target="__blank" href="https://www.linkedin.com/in/maxgrier/">LinkedIn</a></li>
+                    <li><a class="footer-contact__icon" target="__blank" href="mailto:grierm@oregonstate.edu">Email Me</a></li>
+                </ul>
+            </footer>
+               
+        </div>
+
+        <!--This is where I will switch to a homepage and add the carasol pictures-->
+        <div class="home" id="home">
+            <h1>Max Grier</h1>
+            <p class="mini-title">Python - JavaScript - HTML - CSS - SQL</p>
+            <p class="big-title">&lt;Full Stack Developer&gt;</p>
+
+            <img src="seattle_skyline.jpeg" style="width:75%" id="image" class="images">
+            <img src="python_logo.png" style="width:75%" id="image" class="images">
+            <img src="html_css_js.png" style="width:75%" id="image" class="images">
+            <img src="sql.jpg" style="width:75%" id="image" class="images">
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="nextPicture(-1)">&#10094;</a>
+            <a class="next" onclick="nextPicture(1)">&#10095;</a>
+
+            <ul class="header-contact">
+                <li class="onload-shake"><a class="header-contact__icon" target="_blank" href="https://github.com/maxgrier"><i class="fa fa-github-square"></i></a></li>
+                <li class="onload-shake"><a class="header-contact__icon" target="_blank" href="https://www.linkedin.com/in/maxgrier/"><i class="fa fa-linkedin"></i></a></li>
+                <li class="onload-shake"><a class="header-contact__icon" target="_blank" href="mailto:grierm@oregonstate.edu"><i class="fa fa-envelope"></i></a></li>
+            </ul>
+
+        </div>
+<!--
+        <script>
+            var pictureIndex = 0;
+            showCarousel();
+            var pictures;
+            
+            function nextPicture(position) {
+                // This will increment or decrement the carousel for button functionality
+                pictureIndex += position;
+                if (pictureIndex > pictures.length){
+                    pictureIndex = 1
+                }else if(pictureIndex < 1){
+                    pictureIndex = pictures.length
+                }
+                for (i = 0; i < pictures.length; i++) {
+                pictures[i].style.display = "none";  
+                }
+                pictures[pictureIndex-1].style.display = "block";  
+                }
+            
+            function showCarousel() {
+                // This function displays the carousel of images 
+                var i;
+                pictures = document.getElementsByClassName("images");
+                for (i = 0; i < pictures.length; i++) {
+                pictures[i].style.display = "none";  
+                }
+                pictureIndex++;
+                if (pictureIndex > pictures.length) {
+                    pictureIndex = 1
+                }    
+                pictures[pictureIndex - 1].style.display = "block";  
+                 // Change image every 5 seconds
+                setTimeout(showCarousel, 5000);
+            }
+
+            </script>
+        -->
+        <div class="content hide" id="about">
+            <h2 class="aboutMe__header">About Me</h2>
+            <section class ="aboutMe__image">
+                <img class="aboutMe__main-image"src="ProfilePic.jpg">
+            </section>
+            <section class="aboutMe-info">
+                <p>
+                    <div class="scrollbox">
+                        I am Max Grier and I am from a town outside of Seattle Washingont called Gig Harbor.  
+                        I grew up playing sports, camping, boating, and enjoying the Pacific Nortwest.
+                        <br><br>
+                        I currently work as a Financial Analyst at The Boeing Company.  
+                        I started our in Product Development supporting Technology Integration and Advanced Production Systems, 
+                        but have recently transitioned to a role supporting the Director of Flight Sciences.  In this role, I have found
+                        coding can significantly increase efficiencies.  By learning some VBA, I have been able to automate many of my manual reports
+                        which gives me more time to analyze the data.
+                        <br><br>
+                        As I continue to learn ways to automate reporting through VBA and Python, my interest in Computer Science grows.  
+                        There are so many improvements businesses can make with automation while also reducing chance for human error.
+                        I would like continue down the path of Data Analytics to drive well informed business decisions. 
+
+                        </div>
+                </p>
+            </section>
+        </div>
+
+        <div class="content hide" id="projects">
+            <h2 class="project-header">My Projects</h2>
+            <section class="project-info">
+                <h3>Xiangqi Game</h3>
+                <img class="project-image" src="chinese_chess.png">
+                <p>
+                    This project is a Portfolio Project where I created a Chinese Chess game.
+                </p>
+                <p>
+                    It is a two player game very similar to Chess.
+                </p>
+                <p>
+                    Language Used: Python
+                </p>
+                <ul class="project-links">
+                    <li class="project-links__item"><a target="__blank" href="https://github.com/maxgrier/XiangqiGame">GitHub Repository</a></li>
+                </ul>
+            </section>
+            <!-- add more sections with projects. if i have any...-->
+        </div>
+
+        <footer class="footer hide" id="contact">
+            <ul class="footer-contact">
+                <li><a target="__blank" href="https://github.com/maxgrier">GitHub</a></li>
+                <li><a class="footer-contact__icon" target="__blank" href="https://www.linkedin.com/in/maxgrier/">LinkedIn</a></li>
+                <li><a class="footer-contact__icon" target="__blank" href="mailto:grierm@oregonstate.edu">Email Me</a></li>
+            </ul>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
